@@ -13,6 +13,6 @@ app.use(express.json());
 
 // ...
 
-// É importante exportar a constante `appp`,
+// É importante exportar a constante `apppDeleteDelete`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
 module.exports = app;
