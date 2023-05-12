@@ -1,6 +1,9 @@
 const express = require('express');
 const controllers = require('./controllers');
 const { emailPasswordValidation } = require('./middlewares/emailPasswordValidation');
+const { displayNameValidation } = require('./middlewares/displayNameValidation');
+const { emailValidation } = require('./middlewares/emailValidation');
+const { passwordValidation } = require('./middlewares/passwordValidation');
 
 // ...
 
@@ -19,5 +22,13 @@ app.use(express.json());
 // para que possa ser utilizada pelo arquivo `src/server.js`
 
 app.post('/login', emailPasswordValidation, controllers.findEmailAndPassword);
+
+app.post(
+  '/user', 
+  displayNameValidation, 
+  emailValidation, 
+  passwordValidation, 
+  controllers.createUser,
+  );
 
 module.exports = app;
