@@ -23,7 +23,7 @@ const createUser = async (req, res) => {
     return res.status(201).json({ token });
 };
 
-const findAllUsers = async (req, res) => {
+const findAllUsers = async (_req, res) => {
   const allUsers = await services.findAllUsers();
   return res.status(200).json(allUsers);
 };
