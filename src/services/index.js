@@ -1,4 +1,4 @@
 const { emailAndPassword } = require('./login.service');
-const { createUser, findAllUsers } = require('./user.service');
+const { createUser, findAllUsers, findUser } = require('./user.service');
 
-module.exports = { emailAndPassword, createUser, findAllUsers };
+module.exports = { emailAndPassword, createUser, findAllUsers, findUser };

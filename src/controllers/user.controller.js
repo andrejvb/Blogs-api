@@ -28,4 +28,11 @@ const findAllUsers = async (_req, res) => {
   return res.status(200).json(allUsers);
 };
 
-module.exports = { createUser, findAllUsers };
+const findUser = async (req, res) => {
+  const { id } = req.params;
+  const user = await services.findUser(Number(id));
+  if (user.message) return res.status(404).json({ message: user.message });
+  return res.status(200).json(user);
+};
+
+module.exports = { createUser, findAllUsers, findUser };

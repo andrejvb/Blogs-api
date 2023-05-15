@@ -34,4 +34,6 @@ app.post(
 
 app.get('/user', tokenValidation, controllers.findAllUsers);
 
+app.get('/user/:id', tokenValidation, controllers.findUser);
+
 module.exports = app;
