@@ -1,4 +1,4 @@
 const { findEmailAndPassword } = require('./login.controller');
-const { createUser } = require('./user.controller');
+const { createUser, findAllUsers } = require('./user.controller');
 
-module.exports = { findEmailAndPassword, createUser };
+module.exports = { findEmailAndPassword, createUser, findAllUsers };

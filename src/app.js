@@ -4,6 +4,7 @@ const { emailPasswordValidation } = require('./middlewares/emailPasswordValidati
 const { displayNameValidation } = require('./middlewares/displayNameValidation');
 const { emailValidation } = require('./middlewares/emailValidation');
 const { passwordValidation } = require('./middlewares/passwordValidation');
+const { tokenValidation } = require('./middlewares/tokenvalidation');
 
 // ...
 
@@ -30,5 +31,7 @@ app.post(
   passwordValidation, 
   controllers.createUser,
   );
+
+app.get('/user', tokenValidation, controllers.findAllUsers);
 
 module.exports = app;
