@@ -38,4 +38,6 @@ app.get('/user/:id', tokenValidation, controllers.findUser);
 
 app.post('/categories', tokenValidation, controllers.createCategory);
 
+app.get('/categories', tokenValidation, controllers.findAllCategories);
+
 module.exports = app;
