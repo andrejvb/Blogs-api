@@ -1,6 +1,7 @@
 const { findEmailAndPassword } = require('./login.controller');
 const { createUser, findAllUsers, findUser } = require('./user.controller');
 const { createCategory, findAllCategories } = require('./category.controller');
+const { newPost } = require('./post.controller');
 
 module.exports = { 
     findEmailAndPassword, 
@@ -8,5 +9,6 @@ module.exports = {
     findAllUsers, 
     findUser, 
     createCategory,
-    findAllCategories, 
+    findAllCategories,
+    newPost, 
 };

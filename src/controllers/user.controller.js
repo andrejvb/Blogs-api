@@ -18,7 +18,10 @@ const createUser = async (req, res) => {
       );
     if (result.message) return res.status(409).json({ message: result.message });
 
-    const token = generateToken(email);
+    const user = await services.getByEmailAndPassword(email, password);
+    const { password: _password, ...userWithouthPassword } = user.dataValues;
+
+    const token = generateToken({ data: userWithouthPassword });
 
     return res.status(201).json({ token });
 };

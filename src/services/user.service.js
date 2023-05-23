@@ -1,8 +1,10 @@
 const { User } = require('../models');
 
+const findUserByEmail = async (email) => User.findOne({ where: { email } });
+
 const createUser = async (displayName, email, password, image) => {
     try {
-        const availableEmail = await User.findOne({ where: { email } });
+        const availableEmail = await findUserByEmail(email);
 
         if (availableEmail) return ({ message: 'User already registered' });
 
@@ -30,4 +32,14 @@ const findUser = async (id) => {
     return user;
 };
 
-module.exports = { createUser, findAllUsers, findUser };
+const getByEmailAndPassword = async (email, password) => {
+    const result = await User.findOne({
+      where: {
+        email,
+        password,
+      },
+    });
+    return result;
+};
+
+module.exports = { createUser, findAllUsers, findUser, getByEmailAndPassword, findUserByEmail };

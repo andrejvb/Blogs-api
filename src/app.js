@@ -5,6 +5,7 @@ const { displayNameValidation } = require('./middlewares/displayNameValidation')
 const { emailValidation } = require('./middlewares/emailValidation');
 const { passwordValidation } = require('./middlewares/passwordValidation');
 const { tokenValidation } = require('./middlewares/tokenvalidation');
+const { blogPostValidation } = require('./middlewares/blogPostValidation');
 
 // ...
 
@@ -39,5 +40,7 @@ app.get('/user/:id', tokenValidation, controllers.findUser);
 app.post('/categories', tokenValidation, controllers.createCategory);
 
 app.get('/categories', tokenValidation, controllers.findAllCategories);
+
+app.post('/post', tokenValidation, blogPostValidation, controllers.newPost);
 
 module.exports = app;

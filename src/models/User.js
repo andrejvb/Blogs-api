@@ -32,7 +32,7 @@ const userSchema = (sequelize, DataTypes) => {
     
     user.associate = (models) => {
       user.hasMany(models.BlogPost, {
-        foreignKey: 'user_id',
+        foreignKey: 'userId',
         as: 'blogPosts',
       })
     }
