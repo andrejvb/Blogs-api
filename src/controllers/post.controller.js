@@ -6,8 +6,8 @@ const newPost = async (req, res) => {
     const { title, content, categoryIds } = req.body;
     const { authorization: token } = req.headers;
     const data = validateToken(token);
-    console.log('LOG DO CONTROLER ID', data.user.data.id);
-    const userId = data.user.data.id;
+    console.log('LOG DO CONTROLER ID', data);
+    const userId = data.user.id;
     const post = await services.newBlogPost(userId, { title, content, categoryIds });
     return res.status(201).json(post.dataValues);
   } catch (error) {
