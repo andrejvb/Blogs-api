@@ -1,12 +1,6 @@
-const jwt = require('jsonwebtoken');
 const { BlogPost, PostCategory } = require('../models');
 
-const secret = process.env.JWT_SECRET;
-
-const newBlogPost = async (token, { title, content, categoryIds }) => {
-    const data = jwt.verify(token, secret);
-    console.log('log do data do service', data.user.data);
-    const userId = data.user.data.id;    
+const newBlogPost = async (userId, { title, content, categoryIds }) => {
     const newPost = await BlogPost.create({
         title,
         content,
