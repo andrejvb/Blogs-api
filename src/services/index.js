@@ -7,7 +7,7 @@ const {
     findUserByEmail, 
 } = require('./user.service');
 const { createCategory, findAllCategories } = require('./category.service');
-const { newBlogPost, findAllPost } = require('./post.service');
+const { newBlogPost, findAllPost, findPostById } = require('./post.service');
 
 module.exports = { 
     emailAndPassword, 
@@ -20,4 +20,5 @@ module.exports = {
     getByEmailAndPassword,
     findUserByEmail,
     findAllPost,
+    findPostById,
 };

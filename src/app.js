@@ -45,4 +45,6 @@ app.post('/post', tokenValidation, blogPostValidation, controllers.newPost);
 
 app.get('/post', tokenValidation, controllers.findAllPost);
 
+app.get('/post/:id', tokenValidation, controllers.findPostById);
+
 module.exports = app;

@@ -20,4 +20,11 @@ const findAllPost = async (req, res) => {
   return res.status(200).json(allPosts);
 };
 
-module.exports = { newPost, findAllPost };
+const findPostById = async (req, res) => {
+  const { id } = req.params;
+  const post = await services.findPostById(id);
+  if (post.message) return res.status(404).json(post);
+  return res.status(200).json(post);
+};
+
+module.exports = { newPost, findAllPost, findPostById };
