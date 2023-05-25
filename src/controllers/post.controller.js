@@ -15,4 +15,9 @@ const newPost = async (req, res) => {
   }  
 };
 
-module.exports = { newPost };
+const findAllPost = async (req, res) => {
+  const allPosts = await services.findAllPost();
+  return res.status(200).json(allPosts);
+};
+
+module.exports = { newPost, findAllPost };

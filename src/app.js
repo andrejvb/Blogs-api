@@ -43,4 +43,6 @@ app.get('/categories', tokenValidation, controllers.findAllCategories);
 
 app.post('/post', tokenValidation, blogPostValidation, controllers.newPost);
 
+app.get('/post', tokenValidation, controllers.findAllPost);
+
 module.exports = app;
