@@ -6,9 +6,8 @@ const newBlogPost = async (userId, { title, content, categoryIds }) => {
         content,
         userId,      
     });
-    categoryIds.forEach(async (categoryId) => {
-        await PostCategory.create({ categoryId, postId: newPost.id });
-    });
+    await PostCategory.bulkCreate(categoryIds
+        .map((categoryId) => ({ categoryId, postId: newPost.id })));
     return newPost;
 };
 
@@ -28,4 +27,9 @@ const findPostById = async (id) => {
         return posts;
 };
 
-module.exports = { newBlogPost, findAllPost, findPostById };
+const updatePost = async (id, title, content) => {
+    await BlogPost.update({ title, content }, { where: { id } });
+    return findPostById(id);
+};
+
+module.exports = { newBlogPost, findAllPost, findPostById, updatePost };
