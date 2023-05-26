@@ -6,8 +6,16 @@ const {
     getByEmailAndPassword, 
     findUserByEmail, 
 } = require('./user.service');
+
 const { createCategory, findAllCategories } = require('./category.service');
-const { newBlogPost, findAllPost, findPostById, updatePost } = require('./post.service');
+
+const { 
+    newBlogPost, 
+    findAllPost, 
+    findPostById, 
+    updatePost, 
+    deletePost, 
+} = require('./post.service');
 
 module.exports = { 
     emailAndPassword, 
@@ -22,4 +30,5 @@ module.exports = {
     findAllPost,
     findPostById,
     updatePost,
+    deletePost,
 };

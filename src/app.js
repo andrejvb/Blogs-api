@@ -6,7 +6,9 @@ const { emailValidation } = require('./middlewares/emailValidation');
 const { passwordValidation } = require('./middlewares/passwordValidation');
 const { tokenValidation } = require('./middlewares/tokenvalidation');
 const { blogPostValidation } = require('./middlewares/blogPostValidation');
-const { updatePostValidation } = require('./middlewares/updatePostValidation');
+const { titleContentValidation } = require('./middlewares/titleContentValidation');
+const { userValidation } = require('./middlewares/userPostValidation');
+const { postIdValidation } = require('./middlewares/postIdValidation');
 
 // ...
 
@@ -48,6 +50,20 @@ app.get('/post', tokenValidation, controllers.findAllPost);
 
 app.get('/post/:id', tokenValidation, controllers.findPostById);
 
-app.put('/post/:id', tokenValidation, updatePostValidation, controllers.updatePost);
+app.put(
+  '/post/:id', 
+  tokenValidation, 
+  titleContentValidation, 
+  userValidation, 
+  controllers.updatePost,
+  );
+
+  app.delete(
+    '/post/:id', 
+    tokenValidation, 
+    postIdValidation, 
+    userValidation,
+    controllers.deletePost,
+    );
 
 module.exports = app;

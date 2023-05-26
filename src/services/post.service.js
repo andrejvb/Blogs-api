@@ -32,4 +32,6 @@ const updatePost = async (id, title, content) => {
     return findPostById(id);
 };
 
-module.exports = { newBlogPost, findAllPost, findPostById, updatePost };
+const deletePost = async (id) => BlogPost.destroy({ where: { id } });
+
+module.exports = { newBlogPost, findAllPost, findPostById, updatePost, deletePost };

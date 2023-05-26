@@ -1,7 +1,7 @@
 const { findEmailAndPassword } = require('./login.controller');
 const { createUser, findAllUsers, findUser } = require('./user.controller');
 const { createCategory, findAllCategories } = require('./category.controller');
-const { newPost, findAllPost, findPostById, updatePost } = require('./post.controller');
+const { newPost, findAllPost, findPostById, updatePost, deletePost } = require('./post.controller');
 
 module.exports = { 
     findEmailAndPassword, 
@@ -14,4 +14,5 @@ module.exports = {
     findAllPost,
     findPostById,
     updatePost,
+    deletePost,
 };
