@@ -65,5 +65,7 @@ app.put(
     postIdValidation,
     controllers.deletePost,
     );
+  
+  app.delete('/user/me', tokenValidation, controllers.deleteUser);
 
 module.exports = app;

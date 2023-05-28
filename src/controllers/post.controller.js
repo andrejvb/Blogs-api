@@ -22,8 +22,8 @@ const findAllPost = async (req, res) => {
 
 const findPostById = async (req, res) => {
   const { id } = req.params;
-  const post = await services.findPostById(id);
-  if (post.message) return res.status(404).json(post);
+  const post = await services.findPostById(id);  
+  if (!post) return res.status(404).json({ message: 'Post does not exist' });
   return res.status(200).json(post);
 };
 
@@ -41,4 +41,20 @@ const deletePost = async (req, res) => {
   return res.status(204).end();
 };
 
-  module.exports = { newPost, findAllPost, findPostById, updatePost, deletePost };
+const deleteUser = async (req, res) => {
+  const { authorization: token } = req.headers;
+  const data = validateToken(token);
+  
+  const { id } = data.user;
+  await services.deleteUser(id);
+  return res.status(204).end();
+};
+
+  module.exports = { 
+    newPost, 
+    findAllPost, 
+    findPostById, 
+    updatePost, 
+    deletePost,
+    deleteUser, 
+  };

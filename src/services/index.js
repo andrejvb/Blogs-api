@@ -14,7 +14,8 @@ const {
     findAllPost, 
     findPostById, 
     updatePost, 
-    deletePost, 
+    deletePost,
+    deleteUser, 
 } = require('./post.service');
 
 module.exports = { 
@@ -31,4 +32,5 @@ module.exports = {
     findPostById,
     updatePost,
     deletePost,
+    deleteUser,
 };

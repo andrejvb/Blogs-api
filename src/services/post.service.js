@@ -49,8 +49,21 @@ const deletePost = async (postId) => {
   await BlogPost.destroy({
     where: { id: postId },
   });
-
   return { type: null, message: '' };
 };
 
-module.exports = { newBlogPost, findAllPost, findPostById, updatePost, deletePost };
+const deleteUser = async (id) => {
+    await User.destroy({
+        where: { id },
+      });
+    return { type: null, message: '' };
+};
+
+module.exports = { 
+    newBlogPost, 
+    findAllPost, 
+    findPostById, 
+    updatePost, 
+    deletePost,
+    deleteUser, 
+};
