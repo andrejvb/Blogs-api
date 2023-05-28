@@ -61,8 +61,8 @@ app.put(
   app.delete(
     '/post/:id', 
     tokenValidation, 
-    postIdValidation, 
     userValidation,
+    postIdValidation,
     controllers.deletePost,
     );
 
