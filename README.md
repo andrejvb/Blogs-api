@@ -1,4 +1,6 @@
 Blogs-Api 🚀
+
+
 :dart:Projeto desenvolvido para estudos com o objetivo de criar uma API para gerenciar blogs posts, usuários e categorias. A API foi construída utilizando as tecnologias Node.js, Express.js, Sequelize, MySQL e Docker. Além disso, segue uma arquitetura de software baseada no padrão MSC (Model-Service-Controller).
 
 Diagrama ER
