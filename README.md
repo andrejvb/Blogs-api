@@ -7,17 +7,7 @@ Diagrama ER
 O diagrama Entidade-Relacionamento (ER) do projeto é uma representação visual do banco de dados utilizado pela Blogs API. Ele possui as seguintes entidades: users, categories, blog_posts, e posts_categories. Cada entidade é responsável por armazenar informações específicas do sistema.
 Endpoints
 
-Método	Endpoint	                        Descrição
-GET	    /api/blogs	                      Obter todos os blogs
-GET	    /api/blogs/:id	                  Obter um blog específico
-POST	  /api/blogs	                      Criar um novo blog
-PUT	    /api/blogs/:id	                  Atualizar um blog
-DELETE	/api/blogs/:id	                  Excluir um blog
-GET	    /api/blogs/:id/posts	            Obter todos os artigos
-GET	    /api/blogs/:id/posts/:post_id   	Obter um artigo específico
-POST	  /api/blogs/:id/posts	            Criar um novo artigo
-PUT	    /api/blogs/:id/posts/:post_id	    Atualizar um artigo
-DELETE	/api/blogs/:id/posts/:post_id	    Excluir um artigo
+![Captura de tela de 2023-08-02 22-34-09](https://github.com/andrejvb/Blogs-api/assets/112779442/67726850-2b9f-4632-bb48-f69877a1fb30)
 
 :rocket: Como Executar o Projeto
 Clone este repositório em sua máquina:
